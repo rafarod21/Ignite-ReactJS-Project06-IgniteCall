@@ -3,8 +3,6 @@ import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { ArrowRight, Check } from 'phosphor-react'
 
-// import { api } from '@/lib/axios'
-
 import { ContainerRegister, Header } from '../styles'
 import { AuthError, ConnectBox, ConnectItem } from './styles'
 
@@ -17,6 +15,10 @@ export default function ConnectCalendar() {
 
   async function handleConnectCalendar() {
     await signIn('google')
+  }
+
+  async function handleToPageTimeIntervals() {
+    await router.push('/register/time-intervals')
   }
 
   return (
@@ -57,7 +59,11 @@ export default function ConnectCalendar() {
           </AuthError>
         )}
 
-        <Button type="submit" disabled={!isSignedIn}>
+        <Button
+          type="submit"
+          disabled={!isSignedIn}
+          onClick={handleToPageTimeIntervals}
+        >
           Próximo passo <ArrowRight />
         </Button>
       </ConnectBox>
