@@ -12,6 +12,8 @@ export default function Document() {
           crossOrigin="anonymous"
         />
 
+        <link rel="icon" type="image/svg+xml" href="ignite-simbol.ico" />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
           rel="stylesheet"
